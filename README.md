@@ -1,8 +1,12 @@
-This is a Pytorch implementation of Parenting: Optimizing Knowledge Selection of Retrieval-Augmented Language Models with Parameter Decoupling and Tailored Tuning
+This is a naive Pytorch implementation of Parenting: Optimizing Knowledge Selection of Retrieval-Augmented Language Models with Parameter Decoupling and Tailored Tuning
 
 # Parenting: Optimizing Knowledge Selection of Retrieval-Augmented Language Models with Parameter Decoupling and Tailored Tuning
 
-More details of the paper and dataset will be released after it is published.
+🎉 **Our paper has been accepted by ACL 2025 Main Conference!**
+
+We are still working on optimizing the code in order to achieve a more convenient method for parameter space importance calculation.
+
+Special thanks to the open-source assistance from [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory).
 
 
 # The Code
@@ -19,7 +23,7 @@ Note that ``pytorch >=3.9``.
 
 ```tex
 └── code-and-data
-    ├── data										# Dataset examples, detailed version will be released soon
+    ├── data										# Dataset examples
     ├── finetune_twoTask.py			# Gradient-based sensitivity and uncertainty calculation
     ├── finetune_weight.py			# Forward activation probability computation
     ├── ipt_analyse.py					# Unit type recognition
@@ -38,8 +42,10 @@ Note that ``pytorch >=3.9``.
 ```
 
  ## Local Setup
+
   - First, create python environment based on `requirements.txt`
   - Then replace the corresponding files in the Transformers package with files in `transformers` folder, in which we modified the source code to adapt to our importance calculation method
+    - We are still working on **a convenient method** to calculate importance scores, based on `Class TrainerCallback` according to [ViT-benchmark](https://github.com/Artessay/ViT-Benchmark).
   - To reproduce our method, excecute the following scripts in sequence.
 
 ```shell
